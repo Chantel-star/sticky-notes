@@ -1,0 +1,16 @@
+{% extends "notes\base.html" %}
+{% block title %}Delete Note - Sticky Notes{% endblock %}
+
+{% block content %}
+<div class="card border-danger">
+  <div class="card-body">
+    <h4 class="card-title">Delete note</h4>
+    <p class="card-text">Are you sure you want to delete "<strong>{{ object.title }}</strong>"?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Yes, delete</button>
+      <a class="btn btn-secondary" href="{{ object.get_absolute_url }}">Cancel</a>
+    </form>
+  </div>
+</div>
+{% endblock %}
