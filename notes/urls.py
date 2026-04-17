@@ -1,7 +1,7 @@
 from django.urls import path
 
 from . import views
-
+"""URL patterns for the notes application."""
 app_name = 'notes'
 
 urlpatterns = [
