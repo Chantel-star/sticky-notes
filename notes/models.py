@@ -1,10 +1,10 @@
 from django.db import models
 from django.urls import reverse
 
-# Create your models here.
+"""Models for the sticky notes application."""
 
 class Note(models.Model):
-    """Model for a single sticky note."""
+    """Represents a single sticky note created by a user."""
     title = models.CharField(max_length=120, help_text="Short title for the note")
     content = models.TextField(help_text="Content of the sticky note")
     created_at = models.DateTimeField(auto_now_add=True)
