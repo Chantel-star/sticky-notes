@@ -4,10 +4,14 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Note
 from .forms import NoteForm  
 
+"""Views for displaying and managing sticky notes."""
+    
 # -----------------------------
 # List View
 # -----------------------------
 class NoteListView(ListView):
+    """
+    View for displaying a list of notes for current user"""
     model = Note
     template_name = 'notes/notes_list.html'
     context_object_name = 'notes'
@@ -17,6 +21,8 @@ class NoteListView(ListView):
 # Detail View
 # -----------------------------
 class NoteDetailView(DetailView):
+    """
+    View for displaying the details of a specific note."""
     model = Note
     template_name = 'notes/note_detail.html'
     context_object_name = 'note'
@@ -25,6 +31,7 @@ class NoteDetailView(DetailView):
 # Create View
 # -----------------------------
 class NoteCreateView(CreateView):
+    """View for creating a new note."""
     model = Note
     form_class = NoteForm
     template_name = 'notes/note_form.html'
@@ -33,6 +40,7 @@ class NoteCreateView(CreateView):
 # Update View
 # -----------------------------
 class NoteUpdateView(UpdateView):
+    """View for updating an existing note."""
     model = Note
     form_class = NoteForm
     template_name = 'notes/note_form.html'
