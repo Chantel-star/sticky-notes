@@ -2,6 +2,7 @@ from django import forms
 
 from .models import Note
 
+"""Forms used in sticky notes application."""
 
 class NoteForm(forms.ModelForm):
     """Form to create or update a Note."""
